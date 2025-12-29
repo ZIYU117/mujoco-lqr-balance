@@ -54,4 +54,4 @@ python3 balance_test_ok.py
 ![image](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/convergence_20251229_204950.png)
 
 - `Phase Portrait`  
-![image](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/convergence_20251229_204950.png)
+![image](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/phase_20251229_205008.png)
