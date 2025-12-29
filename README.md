@@ -45,16 +45,8 @@ controlled using discrete-time LQR (DLQR).
 ```bash
 python3 balance_test_ok.py
 
+'''
+![Convergence Plot](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/convergence_20251229_204950.png?raw=1)
 
-
-
-Pitch angle, pitch rate, wheel control torque, yaw rate, and command velocity.
-
-![image](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/convergence_20251229_204950.png)
-
----
-
-### Phase Portrait
-Phase portrait in the state space (pitch vs pitch_rate).
 
 ![Phase Portrait](phase_20251229_205008.png)
