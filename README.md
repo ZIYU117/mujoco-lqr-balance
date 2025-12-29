@@ -49,8 +49,8 @@ python3 balance_test_ok.py
 
 ### Convergence Plot
 Pitch angle, pitch rate, wheel control torque, yaw rate, and command velocity.
-```markdown
-![Convergence Plot](convergence_20251229_204950.png)
+
+![image](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/convergence_20251229_204950.png)
 
 ---
 
