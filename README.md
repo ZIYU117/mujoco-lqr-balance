@@ -41,7 +41,7 @@ controlled using discrete-time LQR (DLQR).
 ---
 
 ## 3. How to Run / 執行方式
-```markdown
+
 ```bash
 python3 balance_test_ok.py
 
@@ -49,7 +49,7 @@ python3 balance_test_ok.py
 
 ### Convergence Plot
 Pitch angle, pitch rate, wheel control torque, yaw rate, and command velocity.
-
+```markdown
 ![Convergence Plot](convergence_20251229_204950.png)
 
 ---
