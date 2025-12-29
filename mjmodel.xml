@@ -1,0 +1,146 @@
+<mujoco model="Biped wheel scene">
+  <compiler angle="radian" meshdir="../meshes/"/>
+
+  <visual>
+    <global azimuth="-130" elevation="-20"/>
+    <headlight ambient="0.3 0.3 0.3" diffuse="0.6 0.6 0.6" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+  </visual>
+
+  <statistic extent="0.8" center="0 0 0.1"/>
+
+  <default>
+    <default class="biped_wheel">
+      <joint armature="0.01" damping="0.1" frictionloss="0.2"/>
+      <geom condim="1" friction="0.4" margin="0.001"/>
+      <general ctrlrange="-23.7 23.7"/>
+      <default class="thigh">
+        <joint range="0 2.1"/>
+      </default>
+      <default class="calf">
+        <joint range="-3.3 0"/>
+      </default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" group="3" rgba="1 0 0 0.3"/>
+        <default class="wheel">
+          <geom size="0.022 0 0" condim="6" priority="1" friction="0.8 0.02 0.01"/>
+        </default>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+    <mesh name="base_link" file="base_link.STL"/>
+    <mesh name="R_hip_fix" file="R_hip_fix.STL"/>
+    <mesh name="R_hip" file="R_hip.STL"/>
+    <mesh name="R_thigh" file="R_thigh.STL"/>
+    <mesh name="R_calf" file="R_calf.STL"/>
+    <mesh name="R_wheel" file="R_wheel.STL"/>
+    <mesh name="L_hip_fix" file="L_hip_fix.STL"/>
+    <mesh name="L_hip" file="L_hip.STL"/>
+    <mesh name="L_thigh" file="L_thigh.STL"/>
+    <mesh name="L_calf" file="L_calf.STL"/>
+    <mesh name="L_wheel" file="L_wheel.STL"/>
+    <mesh name="battery" file="battery.STL"/>
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+    <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
+    <body name="base_link" childclass="biped_wheel" pos="0 0 0.8">
+      <inertial pos="-0.029918 -1.7786e-06 10" mass="0.62" diaginertia="0.0022988 0.0014316 0.0023924"/>
+      <joint type="free" limited="false" actuatorfrclimited="false" armature="0" damping="0" frictionloss="0"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.74902 0.74902 0.74902 1" mesh="base_link"/>
+      <geom type="mesh" rgba="0.74902 0.74902 0.74902 1" mesh="base_link"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.62745 0.62745 0.62745 1" mesh="R_hip_fix"/>
+      <geom type="mesh" rgba="0.62745 0.62745 0.62745 1" mesh="R_hip_fix"/>
+      <geom pos="-0.0532504 -0.05625 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.62745 0.62745 0.62745 1" mesh="R_hip"/>
+      <geom pos="-0.0532504 -0.05625 0" quat="1 0 0 0" type="mesh" rgba="0.62745 0.62745 0.62745 1" mesh="R_hip"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.62745 0.62745 0.62745 1" mesh="L_hip_fix"/>
+      <geom type="mesh" rgba="0.62745 0.62745 0.62745 1" mesh="L_hip_fix"/>
+      <geom pos="-0.0532504 0.05625 0" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.62745 0.62745 0.62745 1" mesh="L_hip"/>
+      <geom pos="-0.0532504 0.05625 0" quat="1 0 0 0" type="mesh" rgba="0.62745 0.62745 0.62745 1" mesh="L_hip"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="battery"/>
+      <geom type="mesh" rgba="1 1 1 1" mesh="battery"/>
+      <site name="imu" pos="0 0 0"/>
+      <body name="R_thigh" pos="0 -0.0762001 0">
+        <inertial pos="-6.2352e-05 -0.039508 -0.021371" quat="0.705767 -0.0617206 0.0614388 0.70307" mass="0.9105" diaginertia="0.00153432 0.0014519 0.000344653"/>
+        <joint name="R_hip2thigh" pos="0 0 0" axis="0 1 0" range="0 1.57" actuatorfrcrange="-23.7 23.7"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.62745 0.62745 0.62745 1" mesh="R_thigh"/>
+        <geom type="mesh" rgba="0.62745 0.62745 0.62745 1" mesh="R_thigh"/>
+        <body name="R_calf" pos="0 -0.0638 -0.215">
+          <inertial pos="1.5378e-05 -0.0082389 -0.16157" quat="0.706874 -0.0247355 0.0253256 0.706453" mass="0.555" diaginertia="0.00142928 0.001409 7.57253e-05"/>
+          <joint name="R_thigh2calf" pos="0 0 0" axis="0 1 0" range="-2.61 0" actuatorfrcrange="-23.7 23.7"/>
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="R_calf"/>
+          <geom type="mesh" rgba="1 1 1 1" mesh="R_calf"/>
+          <body name="R_wheel" pos="0 -0.02455 -0.215">
+            <inertial pos="0 -0.0042663 0" quat="0.707107 0 0 0.707107" mass="0.2805" diaginertia="0.00057738 0.00029524 0.00029524"/>
+            <joint name="R_calf2wheel" pos="0 0 0" axis="0 1 0"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15294 0.15294 0.15294 1" mesh="R_wheel"/>
+            <geom type="mesh" rgba="0.15294 0.15294 0.15294 1" mesh="R_wheel"/>
+          </body>
+        </body>
+      </body>
+      <body name="L_thigh" pos="0 0.0762001 0">
+        <inertial pos="-6.238e-05 0.039508 -0.021371" quat="0.70307 0.0614388 -0.0617207 0.705768" mass="0.9105" diaginertia="0.00153432 0.0014519 0.000344653"/>
+        <joint name="L_hip2thigh" pos="0 0 0" axis="0 1 0" range="0 1.57" actuatorfrcrange="-23.7 23.7"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.62745 0.62745 0.62745 1" mesh="L_thigh"/>
+        <geom type="mesh" rgba="0.62745 0.62745 0.62745 1" mesh="L_thigh"/>
+        <body name="L_calf" pos="0 0.0638 -0.215">
+          <inertial pos="1.6296e-05 0.0082388 -0.16158" quat="0.706467 0.025327 -0.0247335 0.70686" mass="0.555" diaginertia="0.00142928 0.0014089 7.57375e-05"/>
+          <joint name="L_thigh2calf" pos="0 0 0" axis="0 1 0" range="-2.61 0" actuatorfrcrange="-23.7 23.7"/>
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="L_calf"/>
+          <geom type="mesh" rgba="1 1 1 1" mesh="L_calf"/>
+          <body name="L_wheel" pos="0 0.02455 -0.215">
+            <inertial pos="0 0.0042663 0" quat="0.707107 0 0 0.707107" mass="0.2805" diaginertia="0.00057738 0.00029524 0.00029524"/>
+            <joint name="L_calf2wheel" pos="0 0 0" axis="0 1 0"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.15294 0.15294 0.15294 1" mesh="L_wheel"/>
+            <geom type="mesh" rgba="0.15294 0.15294 0.15294 1" mesh="L_wheel"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general name="L_thigh" class="thigh" joint="L_hip2thigh"/>
+    <general name="L_calf" class="calf" joint="L_thigh2calf"/>
+    <general name="L_wheel" joint="L_calf2wheel" ctrlrange="-15 15"/>
+    <general name="R_thigh" class="thigh" joint="R_hip2thigh"/>
+    <general name="R_calf" class="calf" joint="R_thigh2calf"/>
+    <general name="R_wheel" joint="R_calf2wheel" ctrlrange="-15 15"/>
+  </actuator>
+
+  <sensor>
+    <jointpos joint="L_hip2thigh" name="L_thigh_pos"/>
+    <jointpos joint="L_thigh2calf" name="L_calf_pos"/>
+    <jointpos joint="L_calf2wheel" name="L_wheel_pos"/>
+    <jointpos joint="R_hip2thigh" name="R_thigh_pos"/>
+    <jointpos joint="R_thigh2calf" name="R_calf_pos"/>
+    <jointpos joint="R_calf2wheel" name="R_wheel_pos"/>
+    <jointvel joint="L_hip2thigh" name="L_thigh_vel"/>
+    <jointvel joint="L_thigh2calf" name="L_calf_vel"/>
+    <jointvel joint="L_calf2wheel" name="L_wheel_vel"/>
+    <jointvel joint="R_hip2thigh" name="R_thigh_vel"/>
+    <jointvel joint="R_thigh2calf" name="R_calf_vel"/>
+    <jointvel joint="R_calf2wheel" name="R_wheel_vel"/>
+    <jointactuatorfrc joint="L_hip2thigh" name="L_thigh_torque" noise="0.01"/>
+    <jointactuatorfrc joint="L_thigh2calf" name="L_calf_torque" noise="0.01"/>
+    <jointactuatorfrc joint="L_calf2wheel" name="L_wheel_torque"/>
+    <jointactuatorfrc joint="R_hip2thigh" name="R_thigh_torque" noise="0.01"/>
+    <jointactuatorfrc joint="R_thigh2calf" name="R_calf_torque" noise="0.01"/>
+    <jointactuatorfrc joint="R_calf2wheel" name="R_wheel_torque"/>
+    <framequat objtype="site" objname="imu" name="imu_quat"/>
+    <gyro site="imu" name="imu_gyro"/>
+    <accelerometer site="imu" name="imu_acc"/>
+    <framepos objtype="site" objname="imu" name="frame_pos"/>
+    <framelinvel objtype="site" objname="imu" name="frame_lin_vel"/>
+    <frameangvel objtype="site" objname="imu" name="frame_ang_vel"/>
+  </sensor>
+</mujoco>
