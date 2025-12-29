@@ -46,4 +46,7 @@ controlled using discrete-time LQR (DLQR).
 ```bash
 python3 balance_test_ok.py
 
+---
 
+## 4. How to Run / 執行方式
+- `controller_lqr.py`  
