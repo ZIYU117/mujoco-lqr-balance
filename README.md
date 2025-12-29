@@ -44,9 +44,6 @@ controlled using discrete-time LQR (DLQR).
 
 ```bash
 python3 balance_test_ok.py
-
----
-
 ## Results / 結果展示
 
 ### Convergence Plot
