@@ -44,3 +44,9 @@ controlled using discrete-time LQR (DLQR).
 
 ```bash
 python3 balance_test_ok.py
+
+---
+
+## 4. Results / 結果
+<img width="1600" height="2304" alt="convergence_20251229_204950" src="https://github.com/user-attachments/assets/e251595f-1043-4bc5-8992-f9deb14045ef" />
+<img width="960" height="640" alt="phase_20251229_205008" src="https://github.com/user-attachments/assets/708af2f3-72bb-4236-90f1-1d56fe726352" />
