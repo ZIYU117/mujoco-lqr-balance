@@ -46,8 +46,12 @@ controlled using discrete-time LQR (DLQR).
 ```bash
 python3 balance_test_ok.py
 ```
+
 ---
 
-## 4. How to Run / 執行方式
+## 4.  Results / 結果展示
 - `Convergence Plot`  
+![image](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/convergence_20251229_204950.png)
+
+- `Phase Portrait`  
 ![image](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/convergence_20251229_204950.png)
