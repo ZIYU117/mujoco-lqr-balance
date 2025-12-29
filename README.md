@@ -41,7 +41,7 @@ controlled using discrete-time LQR (DLQR).
 ---
 
 ## 3. How to Run / 執行方式
-
+```markdown
 ```bash
 python3 balance_test_ok.py
 
