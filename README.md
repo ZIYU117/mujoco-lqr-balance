@@ -44,9 +44,5 @@ controlled using discrete-time LQR (DLQR).
 
 ```bash
 python3 balance_test_ok.py
+![image](https://github.com/ZhiliangMa/MPU6500-HMC5983-AK8975-BMP280-MS5611-10DOF-IMU-PCB/blob/main/img/IMU-V5-TOP.jpg)
 
-'''
-![Convergence Plot](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/convergence_20251229_204950.png?raw=1)
-
-
-![Phase Portrait](phase_20251229_205008.png)
