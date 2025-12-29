@@ -1,6 +1,6 @@
 # mujoco-lqr-balance
 # LQR Self-Balancing Robot (MuJoCo)
-![image](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/convergence_20251229_204950.png)
+
 
 使用 MuJoCo 進行的 LQR 自平衡機器人模擬，內容包含系統矩陣 A/B、
 控制器參數 Q/R/K、收斂圖與相圖分析。
@@ -45,8 +45,9 @@ controlled using discrete-time LQR (DLQR).
 
 ```bash
 python3 balance_test_ok.py
-
+```
 ---
 
 ## 4. How to Run / 執行方式
-- `controller_lqr.py`  
+- `Convergence Plot`  
+![image](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/convergence_20251229_204950.png)
