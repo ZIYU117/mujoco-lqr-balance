@@ -50,8 +50,12 @@ python3 balance_test_ok.py
 ---
 
 ## 4.  Results / 結果展示
-- `Convergence Plot`  
+- `Convergence Plot`
+- Pitch angle, pitch rate, wheel control torque, yaw rate, and command velocity.
+
 ![image](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/convergence_20251229_204950.png)
 
-- `Phase Portrait`  
+- `Phase Portrait`
+- Phase portrait in the state space (pitch vs pitch_rate).
+
 ![image](https://github.com/ZIYU117/mujoco-lqr-balance/blob/main/phase_20251229_205008.png)
