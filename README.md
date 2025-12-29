@@ -44,16 +44,3 @@ controlled using discrete-time LQR (DLQR).
 
 ```bash
 python3 balance_test_ok.py
-## Results / 結果展示
-
-### Convergence Plot
-Pitch angle, pitch rate, wheel control torque, yaw rate, and command velocity.
-
-![Convergence Plot](convergence_20251229_204950.png)
-
----
-
-### Phase Portrait
-Phase portrait in the state space (pitch vs pitch_rate).
-
-![Phase Portrait](phase_20251229_205008.png)
